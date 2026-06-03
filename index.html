@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio of Alvaro Althaaf Viery. A clean, minimalist design inspired by a tennis court, showcasing professional links, skills, and projects.">
+  <title>Alvaro Althaaf Viery | Portfolio</title>
+
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=4.8">
+
+  <!-- Preload hero image before paint; gate rest of page until ready -->
+  <link rel="preload" href="assets/profile_pic-display.png" as="image" fetchpriority="high">
+  <script>
+    (function () {
+      var src = 'assets/profile_pic-display.png';
+      document.documentElement.classList.add('is-app-loading');
+      window.__profilePicReady = new Promise(function (resolve) {
+        var img = new Image();
+        img.onload = img.onerror = function () { resolve(); };
+        img.src = src;
+      });
+      setTimeout(function () {
+        if (document.documentElement.classList.contains('is-app-loading')) {
+          document.documentElement.classList.remove('is-app-loading');
+          document.documentElement.classList.add('is-app-ready');
+        }
+      }, 12000);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <div id="app-splash" class="app-splash" role="status" aria-live="polite" aria-busy="true" aria-label="Loading portfolio">
+    <div class="app-splash__spinner" aria-hidden="true"></div>
+  </div>
+
+  <!-- Glass navigation header -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a href="#profile" class="site-header__brand" id="site-header-brand">Alvaro Althaaf Viery</a>
+      <nav class="site-header__nav" id="site-header-nav" aria-label="Page sections">
+        <a href="#about" class="site-header__link" data-section="about">About</a>
+        <a href="#experience" class="site-header__link" data-section="experience">Experience</a>
+        <a href="#skills" class="site-header__link" data-section="skills">Skills</a>
+        <a href="#projects" class="site-header__link" data-section="projects">Work</a>
+        <a href="#contact" class="site-header__link" data-section="contact">Contact</a>
+      </nav>
+      <button type="button" class="site-header__menu-btn" id="nav-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-header-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Fixed Tennis Court Background -->
+  <div class="court-background" aria-hidden="true">
+    <!-- Abstract Tennis Court-inspired Graphic Wallpaper -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice"
+      class="court-svg">
+      <defs>
+        <!-- Rich Tennis Court Blue Gradient -->
+        <linearGradient id="courtBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#081430" />
+          <stop offset="50%" stop-color="#0c204d" />
+          <stop offset="100%" stop-color="#050e24" />
+        </linearGradient>
+      </defs>
+
+      <!-- Base Court Color -->
+      <rect width="1000" height="1000" fill="url(#courtBlue)" />
+
+      <!-- Clean, Minimalist Court Lines (forming a 'T' junction) -->
+      <g class="court-lines" stroke="#ffffff" stroke-width="11" stroke-linecap="square" fill="none">
+        <!-- Main baseline running diagonally from top-left to bottom-right -->
+        <line x1="200" y1="-50" x2="800" y2="1050" />
+
+        <!-- Mathematically perpendicular line meeting at (500, 500) -->
+        <line x1="500" y1="500" x2="-50" y2="800" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- Scrollable Content Wrapper -->
+  <main class="content-wrapper">
+    <div class="container">
+
+      <!-- Profile Section -->
+      <section class="profile-section" id="profile">
+
+        <!-- Profile Picture Column -->
+        <div class="profile-image-col">
+          <div class="profile-image-container">
+            <img src="assets/profile_pic-display.png" alt="Alvaro Althaaf Viery" class="profile-image" id="profile-img" width="800" height="800" fetchpriority="high" decoding="async">
+          </div>
+        </div>
+
+        <!-- Profile Content Column -->
+        <div class="profile-content-col">
+          <h1 class="profile-name">Alvaro Althaaf Viery</h1>
+          <p class="profile-profession">Data Analyst</p>
+
+          <!-- Action & Socials Row -->
+          <div class="profile-actions">
+            <a href="assets/Alvaro_resume.pdf" target="_blank" class="btn-resume" id="btn-resume">Resume</a>
+
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/varoviery/" target="_blank" rel="noopener noreferrer" class="social-icon"
+                id="link-linkedin" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+                id="link-github" aria-label="GitHub">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </a>
+              <a href="https://kaggle.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+                id="link-kaggle" aria-label="Kaggle">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M18.796 24h-3.416l-5.69-8.318L5.356 20v4H2.178V0h3.178v13.62L14.73 0h3.58l-6.702 9.536L18.796 24z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- About Section — macOS-style window -->
+      <section class="about-section" id="about">
+        <div class="about-wrap reveal">
+          <p class="section-label">About</p>
+          <h2 class="about-heading">How I work, in one glance.</h2>
+
+          <div class="about-window" id="about-window">
+            <div class="about-window__header">
+              <div class="about-window__traffic" aria-hidden="true">
+                <span class="about-window__light about-window__light--red"></span>
+                <span class="about-window__light about-window__light--yellow"></span>
+                <span class="about-window__light about-window__light--green"></span>
+              </div>
+              <div class="about-window__titlebar">Alvaro Viery — system_info</div>
+            </div>
+
+            <div class="about-window__body">
+              <aside class="about-window__sidebar" aria-label="About panels">
+                <nav class="about-window__nav">
+                  <button type="button" class="about-window__nav-btn is-active" data-about-tab="archive" aria-selected="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Archive</span>
+                  </button>
+                  <button type="button" class="about-window__nav-btn" data-about-tab="focus" aria-selected="false">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="16"></line>
+                      <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                    <span>Focus</span>
+                  </button>
+                  <button type="button" class="about-window__nav-btn" data-about-tab="path" aria-selected="false">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span>Path</span>
+                  </button>
+                </nav>
+              </aside>
+
+              <div class="about-window__content">
+                <!-- Archive: bio -->
+                <div class="about-pane is-active" id="about-pane-archive" role="tabpanel" aria-labelledby="about-tab-archive">
+                  <div class="about-pane__inner">
+                    <p class="about-pane__lead">
+                      Data analyst who keeps things simple: clear questions, clean logic, and results teams can act on.
+                      I turn messy datasets into insights, automate reporting, and build dashboards people actually use.
+                    </p>
+                    <p class="about-pane__code">const focus = ["Python", "SQL", "Visualization"];</p>
+                    <p class="about-pill" id="status-chip" title="Click to cycle status" role="button" tabindex="0">
+                      <span class="status-dot" aria-hidden="true"></span>
+                      <span class="status-text">Currently: polishing this portfolio and shipping small improvements.</span>
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Focus: stack & metrics -->
+                <div class="about-pane" id="about-pane-focus" role="tabpanel" hidden>
+                  <div class="about-pane__inner about-pane__inner--focus">
+                    <div class="about-focus__orb" aria-hidden="true">
+                      <span class="about-focus__node">Python</span>
+                      <span class="about-focus__node">SQL</span>
+                      <span class="about-focus__node">Tableau</span>
+                      <span class="about-focus__node">Power BI</span>
+                      <div class="about-focus__core"></div>
+                    </div>
+                    <div class="about-focus__metrics">
+                      <div class="about-metric">
+                        <span class="about-metric__value">3+</span>
+                        <span class="about-metric__label">Years in ops</span>
+                      </div>
+                      <div class="about-metric">
+                        <span class="about-metric__value">ETL</span>
+                        <span class="about-metric__label">Pipelines built</span>
+                      </div>
+                      <div class="about-metric">
+                        <span class="about-metric__value">100%</span>
+                        <span class="about-metric__label">Clarity-first</span>
+                      </div>
+                    </div>
+                    <div class="about-focus__label">
+                      <h3 class="about-focus__title">Analytics stack</h3>
+                      <p class="about-focus__subtitle">From raw data to decisions teams trust</p>
+                      <a class="about-pane__link" href="#skills">Browse skills →</a>
+                      <a class="about-pane__link" href="#projects">Browse the work →</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Path: career schematic -->
+                <div class="about-pane" id="about-pane-path" role="tabpanel" hidden>
+                  <div class="about-schematic">
+                    <article class="about-schematic__node">
+                      <span class="about-schematic__id">Build_0x01</span>
+                      <h3 class="about-schematic__title">Operations &amp; ventures</h3>
+                      <p class="about-schematic__detail">Founder @ Kopi Koploe · POS lead · event logistics</p>
+                      <div class="about-schematic__tags">
+                        <span class="about-schematic__tag">Jakarta</span>
+                        <span class="about-schematic__tag">Kuala Lumpur</span>
+                      </div>
+                    </article>
+                    <div class="about-schematic__connector" aria-hidden="true">
+                      <span class="about-schematic__line"></span>
+                      <span class="about-schematic__arrow"></span>
+                    </div>
+                    <article class="about-schematic__node about-schematic__node--highlight">
+                      <span class="about-schematic__id">Build_0x02</span>
+                      <h3 class="about-schematic__title">Data &amp; digital</h3>
+                      <p class="about-schematic__detail">Digitalization @ PPI Dunia · analytics &amp; reporting</p>
+                      <div class="about-schematic__tags">
+                        <span class="about-schematic__tag">International chapters</span>
+                      </div>
+                      <a class="about-pane__link" href="#experience">See experience →</a>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="experience-section" id="experience">
+        <div class="experience-header reveal">
+          <span class="section-label">Experience</span>
+          <h2 class="experience-headline">From the floor to the spreadsheet.</h2>
+        </div>
+
+        <div class="timeline">
+          <!-- Vertical spine that draws in -->
+          <div class="timeline-spine" aria-hidden="true"></div>
+
+          <!-- Item 1: LEFT -->
+          <div class="tl-item tl-item--left reveal">
+            <div class="tl-card">
+              <span class="tl-date">Oct 2024 – Oct 2025</span>
+              <h3 class="tl-role">Digitalization &amp; Technology</h3>
+              <p class="tl-company">PPI Dunia · Jakarta / International</p>
+              <p class="tl-desc">Collaborated on digital solutions and technology-driven student initiatives across international chapters.</p>
+            </div>
+            <div class="tl-dot"></div>
+          </div>
+
+          <!-- Item 2: RIGHT -->
+          <div class="tl-item tl-item--right reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <span class="tl-date">Oct 2023 – Jun 2024</span>
+              <h3 class="tl-role">Point of Sale Associate</h3>
+              <p class="tl-company">Big Boss HSP · Kuala Lumpur, Malaysia</p>
+              <p class="tl-desc">Managed daily transactions, cash flow, and team operations. Optimized restaurant floor efficiency across busy service shifts.</p>
+            </div>
+          </div>
+
+          <!-- Item 3: LEFT -->
+          <div class="tl-item tl-item--left reveal">
+            <div class="tl-card">
+              <span class="tl-date">Jul 2023 – Oct 2023</span>
+              <h3 class="tl-role">Logistics</h3>
+              <p class="tl-company">Instellar 2023 · Kuala Lumpur, Malaysia</p>
+              <p class="tl-desc">Organized event site planning, infrastructure layout, power distribution, lighting, and sound configuration.</p>
+            </div>
+            <div class="tl-dot"></div>
+          </div>
+
+          <!-- Item 4: RIGHT -->
+          <div class="tl-item tl-item--right reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <span class="tl-date">Jan 2021 – Jun 2021</span>
+              <h3 class="tl-role">Founder &amp; Owner</h3>
+              <p class="tl-company">Kopi Koploe · Jakarta, Indonesia</p>
+              <p class="tl-desc">Built a coffee business from scratch — budgeting, pricing strategy, market research, and daily operations.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Skills Section — categorized boxes -->
+      <section class="skills-section" id="skills" aria-label="Skills">
+        <div class="skills-inner reveal">
+          <header class="skills-header">
+            <span class="section-label">Skills</span>
+            <h2 class="skills-headline">The stack behind the work.</h2>
+          </header>
+
+          <div class="skills-grid">
+            <article class="skills-card">
+              <header class="skills-card__head">
+                <span class="skills-card__tag">Data &amp; code</span>
+                <p class="skills-card__desc">Analysis, scripting, and pipelines</p>
+              </header>
+              <ul class="skills-chips">
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" width="22" height="22"><span>Python</span></li>
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" width="22" height="22"><span>SQL</span></li>
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="" width="22" height="22"><span>R</span></li>
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="22" height="22"><span>JavaScript</span></li>
+                <li class="skill-chip skill-chip--text"><span>Pandas</span></li>
+                <li class="skill-chip skill-chip--text"><span>NumPy</span></li>
+                <li class="skill-chip skill-chip--text"><span>Scikit-learn</span></li>
+                <li class="skill-chip skill-chip--text"><span>ETL pipelines</span></li>
+              </ul>
+            </article>
+
+            <article class="skills-card">
+              <header class="skills-card__head">
+                <span class="skills-card__tag">Visualization</span>
+                <p class="skills-card__desc">Dashboards, charts, and experiments</p>
+              </header>
+              <ul class="skills-chips">
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tableau.svg" alt="" width="22" height="22"><span>Tableau</span></li>
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/powerbi.svg" alt="" width="22" height="22"><span>Power BI</span></li>
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftexcel.svg" alt="" width="22" height="22"><span>Excel</span></li>
+                <li class="skill-chip skill-chip--text"><span>Matplotlib</span></li>
+                <li class="skill-chip skill-chip--text"><span>Seaborn</span></li>
+                <li class="skill-chip skill-chip--text"><span>Statistics</span></li>
+                <li class="skill-chip skill-chip--text"><span>A/B testing</span></li>
+              </ul>
+            </article>
+
+            <article class="skills-card">
+              <header class="skills-card__head">
+                <span class="skills-card__tag">Data platforms</span>
+                <p class="skills-card__desc">Storage, modeling, and version control</p>
+              </header>
+              <ul class="skills-chips">
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" width="22" height="22"><span>PostgreSQL</span></li>
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlebigquery.svg" alt="" width="22" height="22"><span>BigQuery</span></li>
+                <li class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" width="22" height="22"><span>Git</span></li>
+                <li class="skill-chip skill-chip--text"><span>Data modeling</span></li>
+              </ul>
+            </article>
+
+            <article class="skills-card">
+              <header class="skills-card__head">
+                <span class="skills-card__tag">Beyond the spreadsheet</span>
+                <p class="skills-card__desc">Leadership and operations from the field</p>
+              </header>
+              <ul class="skills-chips">
+                <li class="skill-chip skill-chip--text"><span>Leadership</span></li>
+                <li class="skill-chip skill-chip--text"><span>Operations</span></li>
+                <li class="skill-chip skill-chip--text"><span>Strategic planning</span></li>
+                <li class="skill-chip skill-chip--text"><span>Market research</span></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section — story-driven showcase -->
+      <section class="projects-section" id="projects" aria-label="Work">
+        <div class="projects-inner reveal">
+          <header class="projects-header">
+            <span class="section-label">Work</span>
+            <h2 class="projects-headline">Every build starts with a question.</h2>
+          </header>
+
+          <div class="projects-filters" role="tablist" aria-label="Filter projects by topic">
+            <button type="button" class="projects-filter is-active" data-project-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="projects-filter" data-project-filter="data-science" aria-pressed="false">Data</button>
+            <button type="button" class="projects-filter" data-project-filter="nlp" aria-pressed="false">Language</button>
+            <button type="button" class="projects-filter" data-project-filter="dsp" aria-pressed="false">Audio</button>
+            <button type="button" class="projects-filter" data-project-filter="full-stack" aria-pressed="false">Systems</button>
+            <button type="button" class="projects-filter" data-project-filter="simulation" aria-pressed="false">Simulation</button>
+          </div>
+
+          <div class="projects-stories" id="projects-grid">
+            <article class="project-story reveal" data-categories="data-science music" style="--story-index: 0">
+              <header class="project-story__head">
+                <span class="project-story__chapter" aria-hidden="true">01</span>
+                <div class="project-story__tags">
+                  <span>Data</span><span>Music</span>
+                </div>
+                <h3 class="project-story__title">Music Evolution &amp; Streaming</h3>
+                <p class="project-story__hook">Did streaming quietly rewrite how songs are built?</p>
+              </header>
+              <div class="project-story__beats">
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The spark</span>
+                  <p>Playlists reward hooks early and outros late — I wanted evidence, not opinion, across decades of releases.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The build</span>
+                  <p>A multi-method study comparing structure, tempo, and density before and after the streaming era — Jupyter notebooks, Python, and statistical tests tied together.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The takeaway</span>
+                  <p>Patterns emerge in the data: composition did shift. The repo is the full trail from question to charts.</p>
+                </div>
+              </div>
+              <footer class="project-story__foot">
+                <div class="project-story__stack"><span>Jupyter</span><span>Python</span><span>Statistics</span></div>
+                <a href="https://github.com/unknownahmad/Did-Streaming-Break-How-Songs-Are-Built-" target="_blank" rel="noopener noreferrer" class="project-story__link">Continue on GitHub <span aria-hidden="true">→</span></a>
+              </footer>
+            </article>
+
+            <article class="project-story reveal" data-categories="dsp" style="--story-index: 1">
+              <header class="project-story__head">
+                <span class="project-story__chapter" aria-hidden="true">02</span>
+                <div class="project-story__tags"><span>Audio</span><span>Python</span></div>
+                <h3 class="project-story__title">Vocal Pitch Analyzer</h3>
+                <p class="project-story__hook">What if you could <em>see</em> your voice stabilise in real time?</p>
+              </header>
+              <div class="project-story__beats">
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The spark</span>
+                  <p>Singers and speakers feel pitch drift — I wanted a tool that listens, tracks, and reflects it back instantly.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The build</span>
+                  <p>A modular DSP pipeline: autocorrelation for frequency, multi-threaded capture, and live analytics that stay smooth under load.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The takeaway</span>
+                  <p>Practice becomes visual. Open the repo to follow the signal path from microphone to on-screen pitch.</p>
+                </div>
+              </div>
+              <footer class="project-story__foot">
+                <div class="project-story__stack"><span>Python</span><span>DSP</span><span>Threading</span></div>
+                <a href="https://github.com/unknownahmad/pitch_analyzer" target="_blank" rel="noopener noreferrer" class="project-story__link">Continue on GitHub <span aria-hidden="true">→</span></a>
+              </footer>
+            </article>
+
+            <article class="project-story reveal" data-categories="data-science" style="--story-index: 2">
+              <header class="project-story__head">
+                <span class="project-story__chapter" aria-hidden="true">03</span>
+                <div class="project-story__tags"><span>Data</span><span>HR</span></div>
+                <h3 class="project-story__title">HR Analytics Pipeline</h3>
+                <p class="project-story__hook">People data shouldn't live in scattered spreadsheets.</p>
+              </header>
+              <div class="project-story__beats">
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The spark</span>
+                  <p>HR teams need one place to load records, explore trends, and ask “what if we adjust compensation?” without re-exporting CSVs.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The build</span>
+                  <p>A Python GUI with persistent storage, modular pipelines, and predictive salary modeling — built so non-coders can still run analyses.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The takeaway</span>
+                  <p>From ingest to forecast in one flow. The repository documents each layer of the pipeline.</p>
+                </div>
+              </div>
+              <footer class="project-story__foot">
+                <div class="project-story__stack"><span>Python</span><span>Scikit-learn</span><span>GUI</span></div>
+                <a href="https://github.com/unknownahmad/HR-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="project-story__link">Continue on GitHub <span aria-hidden="true">→</span></a>
+              </footer>
+            </article>
+
+            <article class="project-story reveal" data-categories="nlp data-science" style="--story-index: 3">
+              <header class="project-story__head">
+                <span class="project-story__chapter" aria-hidden="true">04</span>
+                <div class="project-story__tags"><span>Language</span><span>ML</span></div>
+                <h3 class="project-story__title">NLP Text Analyzer</h3>
+                <p class="project-story__hook">Drop a document in — leave with sentiment, structure, and the words that matter.</p>
+              </header>
+              <div class="project-story__beats">
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The spark</span>
+                  <p>Long PDFs and Word files hide tone and repetition. I wanted a desktop lab that reads them locally, no cloud upload required.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The build</span>
+                  <p>Upload support, a local sentiment model, and rich frequency metrics — word counts, sentence rhythm, and patterns surfaced in one dashboard.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The takeaway</span>
+                  <p>Text becomes legible at a glance. Follow the repo to see how each metric is computed.</p>
+                </div>
+              </div>
+              <footer class="project-story__foot">
+                <div class="project-story__stack"><span>Python</span><span>NLP</span><span>ML</span></div>
+                <a href="https://github.com/unknownahmad/text-analyzer-tool" target="_blank" rel="noopener noreferrer" class="project-story__link">Continue on GitHub <span aria-hidden="true">→</span></a>
+              </footer>
+            </article>
+
+            <article class="project-story reveal" data-categories="simulation data-science" style="--story-index: 4">
+              <header class="project-story__head">
+                <span class="project-story__chapter" aria-hidden="true">05</span>
+                <div class="project-story__tags"><span>Simulation</span><span>AI</span></div>
+                <h3 class="project-story__title">Champions League Simulator</h3>
+                <p class="project-story__hook">What happens when tournament logic meets betting odds and a little AI commentary?</p>
+              </header>
+              <div class="project-story__beats">
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The spark</span>
+                  <p>I wanted to replay knockout drama in software — brackets, stakes, and outcomes you could tweak and watch unfold.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The build</span>
+                  <p>A GUI simulator with SQLite persistence, threaded runs, betting mechanics, and DeepSeek woven in for narrative flair between matches.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The takeaway</span>
+                  <p>Each season is a story you can rerun. The code shows how probability, UI, and data storage stay in sync.</p>
+                </div>
+              </div>
+              <footer class="project-story__foot">
+                <div class="project-story__stack"><span>Python</span><span>SQLite</span><span>GUI</span></div>
+                <a href="https://github.com/unknownahmad/Champions-League-Gambling-Simulator-GUI-Edition-" target="_blank" rel="noopener noreferrer" class="project-story__link">Continue on GitHub <span aria-hidden="true">→</span></a>
+              </footer>
+            </article>
+
+            <article class="project-story reveal" data-categories="full-stack" style="--story-index: 5">
+              <header class="project-story__head">
+                <span class="project-story__chapter" aria-hidden="true">06</span>
+                <div class="project-story__tags"><span>Systems</span><span>FastAPI</span></div>
+                <h3 class="project-story__title">Nexus — Unified Booking</h3>
+                <p class="project-story__hook">One room, many calendars — booking without the back-and-forth.</p>
+              </header>
+              <div class="project-story__beats">
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The spark</span>
+                  <p>Shared resources double-book too easily. Teams need conflict checks, weather context, and channels people already use.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The build</span>
+                  <p>FastAPI at the core, a Telegram bot for users, and a multi-threaded admin desktop — automated detection when two requests collide.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The takeaway</span>
+                  <p>Booking becomes infrastructure, not inbox chaos. Explore the repo for API, bot, and dashboard pieces.</p>
+                </div>
+              </div>
+              <footer class="project-story__foot">
+                <div class="project-story__stack"><span>FastAPI</span><span>Python</span><span>Telegram</span></div>
+                <a href="https://github.com/unknownahmad/Nexus" target="_blank" rel="noopener noreferrer" class="project-story__link">Continue on GitHub <span aria-hidden="true">→</span></a>
+              </footer>
+            </article>
+
+            <article class="project-story reveal" data-categories="data-science" style="--story-index: 6">
+              <header class="project-story__head">
+                <span class="project-story__chapter" aria-hidden="true">07</span>
+                <div class="project-story__tags"><span>Data</span><span>Math</span></div>
+                <h3 class="project-story__title">Numerical Showdown</h3>
+                <p class="project-story__hook">Which root-finding method wins — and can you watch it converge live?</p>
+              </header>
+              <div class="project-story__beats">
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The spark</span>
+                  <p>Bisection, Newton, Secant, Fixed-Point — textbooks describe them; I wanted a arena that races them side by side.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The build</span>
+                  <p>An interactive dashboard plotting convergence paths and timing each algorithm on the same function — built from scratch in Python.</p>
+                </div>
+                <div class="project-story__beat">
+                  <span class="project-story__beat-label">The takeaway</span>
+                  <p>Trade-offs become obvious when you see the curves. The repository is the full benchmark playground.</p>
+                </div>
+              </div>
+              <footer class="project-story__foot">
+                <div class="project-story__stack"><span>Python</span><span>NumPy</span><span>Plotting</span></div>
+                <a href="https://github.com/unknownahmad/numerical-showdown" target="_blank" rel="noopener noreferrer" class="project-story__link">Continue on GitHub <span aria-hidden="true">→</span></a>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact-section" id="contact" aria-label="Contact">
+        <div class="contact-inner reveal">
+          <span class="section-label">Contact</span>
+
+          <div class="contact-card">
+            <span class="contact-card__label">Inbox open</span>
+            <a href="mailto:varociery@gmail.com" class="contact-email" id="contact-email">varociery@gmail.com</a>
+            <div class="contact-actions">
+              <a href="mailto:varociery@gmail.com" class="contact-btn contact-btn--primary">Send an email</a>
+              <button type="button" class="contact-btn contact-btn--ghost" id="contact-copy" aria-live="polite">Copy address</button>
+            </div>
+            <p class="contact-hint" id="contact-hint" hidden></p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="site-footer__fade" aria-hidden="true"></div>
+    <div class="site-footer__inner">
+      <a href="#profile" class="site-footer__brand">Alvaro Althaaf Viery</a>
+      <nav class="site-footer__nav" aria-label="Footer">
+        <a href="#about" class="site-footer__link">About</a>
+        <a href="#experience" class="site-footer__link">Experience</a>
+        <a href="#skills" class="site-footer__link">Skills</a>
+        <a href="#projects" class="site-footer__link">Work</a>
+        <a href="mailto:varociery@gmail.com" class="site-footer__link">Email</a>
+      </nav>
+      <a href="#profile" class="site-footer__top" aria-label="Back to top">Top ↑</a>
+    </div>
+    <p class="site-footer__copy"><span>© 2026 Alvaro Althaaf Viery</span></p>
+  </footer>
+
+  <!-- Script File -->
+  <script src="script.js?v=4.0"></script>
+</body>
+
+</html>
