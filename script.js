@@ -202,7 +202,7 @@ function initPortfolio() {
   // 7. Contact — copy email
   const contactCopy = document.getElementById('contact-copy');
   const contactHint = document.getElementById('contact-hint');
-  const contactEmail = 'varociery@gmail.com';
+  const contactEmail = 'varoviery@gmail.com';
   const copyMessages = [
     'Copied — your turn to hit send.',
     'Address saved. Go make it a good email.',
