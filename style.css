@@ -1380,7 +1380,9 @@ html.is-app-ready body > *:not(#app-splash) {
 .skill-chip {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  min-width: 0;
   min-height: 44px;
   padding: 8px 12px;
   border-radius: 12px;
@@ -1390,7 +1392,14 @@ html.is-app-ready body > *:not(#app-splash) {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: -0.01em;
+  text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-chip span {
+  min-width: 0;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .skill-chip:hover {
@@ -1406,14 +1415,26 @@ html.is-app-ready body > *:not(#app-splash) {
   flex-shrink: 0;
 }
 
-.skill-chip--text {
-  justify-content: center;
-  text-align: center;
+.skill-chip--text span {
+  flex: 0 1 auto;
 }
 
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .skills-card {
+    padding: 20px 18px 18px;
+  }
+
+  .skills-card__tag {
+    font-size: 15px;
+  }
+
+  .skills-card__desc {
+    font-size: 13px;
   }
 
   .skills-headline {
@@ -1421,7 +1442,18 @@ html.is-app-ready body > *:not(#app-splash) {
   }
 
   .skills-chips {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  }
+
+  .skill-chip {
+    min-height: 44px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .skill-chip img {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -1689,11 +1721,6 @@ html.is-app-ready body > *:not(#app-splash) {
   }
 }
 
-@media (max-width: 400px) {
-  .skills-chips {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ==========================================================================
    Contact
